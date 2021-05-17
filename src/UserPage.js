@@ -1,23 +1,23 @@
 import React, { useEffect, useState } from "react";
 import firebase from "firebase";
-import { Link, useHistory, Redirect, withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 function UserPage({}) {
   const [user, setUser] = useState(null);
   const [loaded, setLoaded] = useState(null);
-  const history = useHistory();
+  // const history = useHistory();
 
   useEffect(() => {
     if (firebase.auth().currentUser) {
       setUser(firebase.auth().currentUser);
       setLoaded(true);
     } else {
-      history.replace("/");
+      // history.replace("/");
       setLoaded(false);
     }
   }, []);
 
-  const logout = async () => {
+  const logout = () => {
     firebase
       .auth()
       .signOut()

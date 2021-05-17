@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Input from "../Input/Input";
 import styles from "./LoginBox.module.scss";
 import firebase from "firebase";
-import { useHistory } from "react-router-dom";
 
 export default function LoginBox() {
   const [email, setEmail] = useState(null);

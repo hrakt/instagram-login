@@ -58,7 +58,7 @@ function App() {
           <UserPage />
         </Route>
         <Route exact path="/signup">
-          <SignupPage user={user} />
+          {loggedIn ? <Redirect to="/protected" /> : <SignupPage />}
         </Route>
       </Switch>
     </Router>

@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import Input from "../Input/Input";
 import styles from "./Signup.module.scss";
 import firebase from "firebase";
-import { useHistory, Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Signup({ user }) {
-  const history = useHistory();
+  //   const history = useHistory();
   const [email, setEmail] = useState(null);
   const [fullName, setFullName] = useState(null);
   const [username, setUsername] = useState(null);
@@ -14,7 +14,6 @@ export default function Signup({ user }) {
   useEffect(() => {
     if (firebase.auth().currentUser) {
       console.log(firebase.auth().currentUser);
-      history.replace("/");
     }
   }, []);
   const onSignup = () => {
