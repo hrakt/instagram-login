@@ -4,19 +4,22 @@ import {
   Switch,
   Route,
   Redirect,
+  useHistory,
+  withRouter,
 } from "react-router-dom";
-import User from "./UserPage";
+import UserPage from "./UserPage";
+import SignupPage from "./SignupPage";
 import React, { useEffect, useState } from "react";
 import LoginPage from "./LoginPage";
 
 var firebaseConfig = {
-  apiKey: process.env.apiKey,
-  authDomain: process.env.authDomain,
-  projectId: process.env.projectId,
-  storageBucket: process.env.storageBucket,
-  messagingSenderId: process.env.messagingSenderId,
-  appId: process.env.appId,
-  measurementId: process.env.measurementId,
+  apiKey: "AIzaSyAEy-j5TRqiWEhfHxrjkYIo3Kj3uIpwqWs",
+  authDomain: "instagram-login-b5430.firebaseapp.com",
+  projectId: "instagram-login-b5430",
+  storageBucket: "instagram-login-b5430.appspot.com",
+  messagingSenderId: "82928981879",
+  appId: "1:82928981879:web:5477d71a4e5c31892db372",
+  measurementId: "G-35KM1H10MV",
 };
 
 if (firebase.apps.length === 0) {
@@ -25,15 +28,18 @@ if (firebase.apps.length === 0) {
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
-  // const history = useHistory();
-  useEffect(() => {
-    if (firebase.auth().currentUser && firebase.auth().currentUser.uid) {
-      setLoggedIn(true);
-      // console.log(loggedIn);
-      // history.push("/protected");
-    }
+  const [user, setUser] = useState(false);
+
+  React.useEffect(() => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (!user) {
+        setLoggedIn(false);
+      } else {
+        setLoggedIn(true);
+        setUser(firebase.auth().currentUser);
+      }
+    });
   }, []);
-  console.log(firebase.auth().currentUser);
   return (
     <Router>
       {/* <div className={styles.app}>
@@ -45,11 +51,14 @@ function App() {
         </div>
       </div> */}
       <Switch>
-        <Route path="/">
+        <Route exact path="/">
           {loggedIn ? <Redirect to="/protected" /> : <LoginPage />}
         </Route>
-        <Route path="/protected">
-          <User />
+        <Route exact path="/protected">
+          <UserPage />
+        </Route>
+        <Route exact path="/signup">
+          <SignupPage user={user} />
         </Route>
       </Switch>
     </Router>

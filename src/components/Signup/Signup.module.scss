@@ -1,0 +1,95 @@
+@import "../../breakpoints.scss";
+
+.signup {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  border-radius: 1px;
+  margin: 0 0 10px;
+}
+
+.logo {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  height: 60px;
+}
+
+.logoWrapper {
+  margin: 22px auto 12px;
+}
+
+.loginButton {
+  margin: 8px 40px;
+  border: 1px solid transparent;
+  background-color: #0095f6;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  font-weight: 600;
+  padding: 5px 9px;
+}
+
+.link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+}
+
+.divider {
+  display: flex;
+  margin: 10px 40px 18px;
+}
+
+.dividerText {
+  color: rgba(142, 142, 142, 1);
+  flex-shrink: 0;
+  flex-grow: 0;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 15px;
+  margin: 0 18px;
+  text-transform: uppercase;
+}
+
+.line {
+  flex-grow: 1;
+  flex-shrink: 1;
+  background-color: #dbdbdb;
+  height: 1px;
+  position: relative;
+  top: 0.45em;
+}
+
+.signupText {
+  color: #8e8e8e;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 0 40px 10px;
+  text-align: center;
+}
+
+.disclosure {
+  color: #8e8e8e;
+  font-size: 12px;
+  line-height: 16px;
+  margin: 10px 40px;
+  text-align: center;
+}
+
+@include mobile {
+  .signup {
+    margin-top: 12px;
+    background-color: #fff;
+    border: 1px solid rgba(219, 219, 219, 1);
+  }
+}
