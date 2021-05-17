@@ -1,0 +1,99 @@
+@import "../../breakpoints.scss";
+
+.login {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  border-radius: 1px;
+  margin: 0 0 10px;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+}
+
+.links {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.facebook {
+  margin: 8px 40px;
+  font-weight: 600;
+  color: #385185;
+}
+
+.facebookIcon {
+  margin-right: 8px;
+  position: relative;
+  top: 3px;
+}
+
+.logoWrapper {
+  margin: 22px auto 12px;
+}
+
+.forgot {
+  display: inline-block;
+  color: #00376b;
+  font-size: 12px;
+  line-height: 14px;
+  margin-top: 12px;
+  text-align: center;
+}
+
+.logo {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  height: 60px;
+}
+
+.loginButton {
+  margin: 8px 40px;
+  border: 1px solid transparent;
+  background-color: #0095f6;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  font-weight: 600;
+  padding: 5px 9px;
+}
+
+.divider {
+  display: flex;
+  margin: 10px 40px 18px;
+}
+
+.dividerText {
+  color: rgba(142, 142, 142, 1);
+  flex-shrink: 0;
+  flex-grow: 0;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 15px;
+  margin: 0 18px;
+  text-transform: uppercase;
+}
+
+.line {
+  flex-grow: 1;
+  flex-shrink: 1;
+  background-color: #dbdbdb;
+  height: 1px;
+  position: relative;
+  top: 0.45em;
+}
+
+@include mobile {
+  .login {
+    margin-top: 12px;
+    background-color: #fff;
+    border: 1px solid rgba(219, 219, 219, 1);
+  }
+}

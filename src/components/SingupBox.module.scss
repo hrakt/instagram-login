@@ -1,0 +1,27 @@
+@import "../breakpoints.scss";
+
+.box {
+  align-items: center;
+  border-radius: 1px;
+  margin: 0 0 10px;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.paragraph {
+  font-weight: 400;
+}
+
+.link {
+  display: inline !important;
+  margin: 0 !important;
+  color: #0095f6;
+  font-weight: 600;
+}
+
+@include mobile {
+  .box {
+    background-color: #fff;
+    border: 1px solid rgba(219, 219, 219, 1);
+  }
+}
